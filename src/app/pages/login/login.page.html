@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" padding>
+  <br><br><br><br>
+  <form (ngSubmit)="login()" [formGroup]="uyelikBilgisi" >
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3 style="position: relative; left:105px; font-size: 35px;">Login</h3>
+          </div>
+          <div padding>
+            <br>
+            <ion-item>
+              <ion-input formControlName="email" name="email" type="email" placeholder="email" ngModel required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Şifre" formControlName="password" ngModel required ></ion-input>
+            </ion-item>
+            <br>
+          </div>
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="!uyelikBilgisi.valid"  expand="block">Giriş Yap</ion-button>
+          </div>
+          <br>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div text-center style="position: relative; left: 70px;">
+     Hesabın yok ise <a routerLink='/register'>
+        Kayıt Ol</a>
+        </div>
+    </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

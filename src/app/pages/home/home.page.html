@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+    <ion-button style="float: left;" (click)="runHttp()" >User çek</ion-button>
+    <ion-button style="float:right" expand="block" color="danger" fill='clear' (click)="logout()">Çıkış Yap</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+    <ion-list *ngFor='let user of users'>
+      <ion-item>
+      <ion-avatar>
+        <img src="{{user.avatar}}">
+      </ion-avatar>
+      <h6>&nbsp;&nbsp;{{user.first_name}} {{user.last_name}}</h6> <br><br>
+    </ion-item>
+      <ion-item>
+        <p>{{user.email}}</p>
+      </ion-item>
+    </ion-list>
+ 
+</ion-content>
